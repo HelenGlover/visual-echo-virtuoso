@@ -13,6 +13,8 @@ import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { mockBills, mockNotes, type Bill } from "@/lib/mock-data";
+import { STAGES } from "@/lib/stages";
+import { BillProgress } from "@/components/bill-progress";
 import { getSession } from "@/lib/auth";
 
 export const Route = createFileRoute("/dashboard")({
