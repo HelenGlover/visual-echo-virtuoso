@@ -1,3 +1,5 @@
+import type { BillStage } from "./stages";
+
 export type Chamber = "house" | "senate";
 export type BillType = "HR" | "S" | "HJRES" | "SJRES" | "HCONRES" | "SCONRES";
 
@@ -37,6 +39,7 @@ export type Bill = {
   sponsor: string;
   introduced: string;
   status: string;
+  stage: BillStage;
   summary: string;
   relatedBillId?: string;
   previousYearBillId?: string;
@@ -98,6 +101,7 @@ export const mockBills: Bill[] = [
     sponsor: "Rep. J. Carter (R-TX)",
     introduced: "2025-02-14",
     status: "Reported by Committee",
+    stage: "committee",
     summary:
       "Authorizes appropriations for Department of Defense activities and modernizes oversight frameworks.",
     relatedBillId: "s-998",
@@ -133,6 +137,7 @@ export const mockBills: Bill[] = [
     sponsor: "Sen. R. Patel (D-NJ)",
     introduced: "2025-03-04",
     status: "Introduced",
+    stage: "introduced",
     summary:
       "Reforms federal surveillance authorities and strengthens judicial review of intelligence requests.",
     versions: [
@@ -152,10 +157,32 @@ export const mockBills: Bill[] = [
     sponsor: "Rep. L. Nguyen (D-WA)",
     introduced: "2025-01-29",
     status: "Passed House",
+    stage: "other_chamber",
     summary: "Expands broadband infrastructure grants to rural and tribal communities.",
     versions: [
       { id: "v1", label: "Introduced", date: "2025-01-29", text: v1Text, isBase: true },
       { id: "v2", label: "Engrossed", date: "2025-03-15", text: v2Text, isNew: true },
+    ],
+    topics: [],
+    amendments: [],
+  },
+  {
+    id: "hr-742",
+    number: "H.R. 742",
+    title: "Coastal Resilience and Flood Mitigation Act",
+    shortTitle: "Coastal Resilience Act",
+    congress: 119,
+    chamber: "house",
+    billType: "HR",
+    sponsor: "Rep. T. Brooks (D-FL)",
+    introduced: "2024-11-12",
+    status: "Signed into law",
+    stage: "law",
+    summary:
+      "Funds coastal infrastructure resilience projects and updates FEMA flood mitigation programs.",
+    versions: [
+      { id: "v1", label: "Introduced", date: "2024-11-12", text: v1Text, isBase: true },
+      { id: "v2", label: "Enrolled", date: "2025-02-28", text: v2Text, isNew: true },
     ],
     topics: [],
     amendments: [],
