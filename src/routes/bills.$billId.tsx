@@ -6,12 +6,14 @@ import {
   FileText,
   GitCompare,
   MessageSquare,
+  NotebookPen,
   Plus,
   Sparkles,
   Upload,
   User,
 } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
+import { BillNotes } from "@/components/bill-notes";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -167,6 +169,9 @@ function BillDetail() {
                 <TabsTrigger value="amendments">
                   <MessageSquare className="mr-1.5 h-4 w-4" /> Amendments
                 </TabsTrigger>
+                <TabsTrigger value="notes">
+                  <NotebookPen className="mr-1.5 h-4 w-4" /> Notes
+                </TabsTrigger>
               </TabsList>
 
               <TabsContent value="compare" className="mt-6">
@@ -234,6 +239,10 @@ function BillDetail() {
                     ))}
                   </ul>
                 )}
+              </TabsContent>
+
+              <TabsContent value="notes" className="mt-6">
+                <BillNotes billId={bill.id} />
               </TabsContent>
             </Tabs>
           </div>
