@@ -139,6 +139,19 @@ function BillDetail() {
           </div>
         </header>
 
+        {/* Legislative progress */}
+        <section className="mt-8 rounded-xl border border-border bg-card p-6 shadow-soft">
+          <div className="mb-4 flex items-center justify-between">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+              Legislative progress
+            </h2>
+            <span className="text-xs text-muted-foreground">
+              From introduction to law
+            </span>
+          </div>
+          <BillProgress stage={bill.stage} />
+        </section>
+
         <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_300px]">
           {/* Main */}
           <div>
