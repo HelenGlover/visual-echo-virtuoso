@@ -28,6 +28,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { TopicDialog } from "@/components/topic-dialog";
+import { BillProgress } from "@/components/bill-progress";
 import { getBill, type TopicTag } from "@/lib/mock-data";
 import { diffWords } from "@/lib/diff";
 import { getSession } from "@/lib/auth";
