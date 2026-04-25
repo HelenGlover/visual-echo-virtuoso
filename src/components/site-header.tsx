@@ -35,6 +35,7 @@ export function SiteHeader() {
               <NavLink to="/upload" label="Upload Bill" />
             </>
           )}
+          <NavLink to="/about" label="About" />
         </nav>
 
         <div className="flex items-center gap-2">
